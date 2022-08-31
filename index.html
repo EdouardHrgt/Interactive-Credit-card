@@ -35,11 +35,10 @@
       <!-- Right column -->
       <section class="right_col">
         <!-- Form -->
-        <form>
+        <form @submit.prevent="submitForm">
           <div class="form_group">
             <label for="username">Cardholder Name</label>
-            <input type="text" name="username" placeholder="e.g. Jane Appleseed" required />
-            <p class="err_msg" v-show="errMsg">error message</p>
+            <input type="text" name="username" placeholder="e.g. Jane Appleseed" required v-model="owner"/>
           </div>
 
           <div class="form_group">
@@ -51,8 +50,9 @@
               required
               minlength="16"
               maxlength="16"
+              v-model="number"
             />
-            <p class="err_msg" v-show="errMsg">error message</p>
+            <p class="err_msg" v-show="errMsg">Wrong format, numbers only</p>
           </div>
           <div class="form_group row_inputs">
             <div class="date_from_group">
@@ -66,6 +66,7 @@
                   minlength="2"
                   maxlength="2"
                   class="input_date"
+                  v-model="month"
                 />
                 <input
                   type="text"
@@ -75,6 +76,7 @@
                   minlength="2"
                   maxlength="2"
                   class="input_date"
+                  v-model="year"
                 />
               </div>
             </div>
@@ -89,6 +91,7 @@
                   minlength="3"
                   maxlength="4"
                   class="input_cvv"
+                  v-model="cvv"
                 />
               </div>
             </div>

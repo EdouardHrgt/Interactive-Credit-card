@@ -63,17 +63,21 @@
     min-height: 320px;
     height: 320px;
   }
+  .card_balls {
+    margin-bottom: 1rem;
+  }
   .card_back,
   .card_front {
     width: 90%;
     background-repeat: no-repeat;
   }
   .card_front {
-    bottom: -8.5rem;
+    bottom: -10rem;
+    left: -10px;
   }
   .card_back {
-    right: 0;
-    top: -13.3rem;
+    right: -10px;
+    top: -8.7rem;
     background-size: contain;
   }
   .cvv {

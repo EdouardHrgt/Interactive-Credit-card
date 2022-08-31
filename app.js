@@ -11,9 +11,15 @@ const vm = new Vue({
       /* Form inputs*/
       owner: '',
       number: '',
-      expDate: '',
+      month: '',
+      year: '',
       cvv: '',
-      errMsg: false,
+      errMsg: true,
     };
+  },
+  methods: {
+    submitForm() {
+      console.log(this.owner, this.number, this.cvv);
+    },
   },
 });
