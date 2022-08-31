@@ -8,6 +8,7 @@
     <script src="https://cdn.jsdelivr.net/npm/vue@2.7.10/dist/vue.js"></script>
     <script src="./app.js" defer></script>
     <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="responsive.css">
     <title>Frontend Mentor | Interactive card details form</title>
   </head>
   <body>
@@ -53,27 +54,47 @@
             />
             <p class="err_msg" v-show="errMsg">error message</p>
           </div>
-          <div class="form_group">
-            <label for="date">Exp. Date (MM/YY)</label>
-            <input type="text" name="month" placeholder="MM" required minlength="2" maxlength="2" class="input_date"/>
-            <input type="text" name="year" placeholder="YY" required minlength="2" maxlength="2" class="input_date"/>
-            <p class="err_msg" v-show="errMsg">error message</p>
+          <div class="form_group row_inputs">
+            <div class="date_from_group">
+              <label for="date">Exp. Date (MM/YY)</label>
+              <div class="date_inputs">
+                <input
+                  type="text"
+                  name="month"
+                  placeholder="MM"
+                  required
+                  minlength="2"
+                  maxlength="2"
+                  class="input_date"
+                />
+                <input
+                  type="text"
+                  name="year"
+                  placeholder="YY"
+                  required
+                  minlength="2"
+                  maxlength="2"
+                  class="input_date"
+                />
+              </div>
+            </div>
+            <div class="date_from_group">
+              <label for="cvv">CVC</label>
+              <div class="date_inputs">
+                <input
+                  type="text"
+                  name="cvv"
+                  placeholder="e.g. 123"
+                  required
+                  minlength="3"
+                  maxlength="4"
+                  class="input_cvv"
+                />
+              </div>
+            </div>
           </div>
           <div class="form_group">
-            <label for="cvv">CVC</label>
-            <input
-              type="text"
-              name="cvv"
-              placeholder="e.g. 123"
-              required
-              minlength="3"
-              maxlength="4"
-              class="input_cvv"
-            />
-            <p class="err_msg" v-show="errMsg">error message</p>
-          </div>
-          <div class="form_group">
-            <button type="submit">Confirm</button>
+            <button type="submit" id="sub_btn">Confirm</button>
           </div>
         </form>
       </section>
