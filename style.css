@@ -1,0 +1,136 @@
+:root {
+  --white: hsl(0, 0%, 100%);
+  --light-gray-violet: hsl(270, 3%, 87%);
+  --dark-gray-violet: hsl(279, 6%, 55%);
+  --very-dark-gray-violet: hsl(278, 68%, 11%);
+  --red: hsl(0, 100%, 66%);
+}
+
+@import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500&display=swap');
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Space Grotesk', sans-serif;
+  font-weight: 500;
+}
+
+body {
+  width: 100%;
+  min-height: 100vh;
+  background-color: black;
+}
+
+#app {
+  width: 1440px;
+  min-height: inherit;
+  background: var(--white);
+  margin: auto;
+  display: flex;
+}
+
+.left_col {
+  background: url(./images/bg-main-desktop.png);
+  width: 480px;
+  min-height: inherit;
+}
+
+.card_back,
+.card_front {
+  width: 450px;
+}
+
+/* FRONT CARD */
+.card_front {
+  background: url(./images/bg-card-front.png);
+  background-size: cover;
+  border-radius: 7px;
+  padding: 1.7rem;
+  margin-top: 11rem;
+  margin-bottom: 2.3rem;
+  position: relative;
+  right: -155px;
+}
+
+.card_balls {
+  display: flex;
+  align-items: center;
+  margin-bottom: 4.2rem;
+}
+
+.card_infos {
+  color: var(--light-gray-violet);
+}
+
+.card_code {
+  font-size: 1.7rem;
+  letter-spacing: 1.5px;
+  font-weight: bolder;
+  margin-bottom: 1.7rem;
+}
+
+.card_owner_infos {
+  display: flex;
+  justify-content: space-between;
+  font-size: 15px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* BACK CARD */
+.card_back {
+  background: url(./images/bg-card-back.png);
+  min-height: 245px;
+  background-size: cover;
+  position: relative;
+  right: -250px;
+}
+
+.cvv {
+  color: var(--white);
+  letter-spacing: 2px;
+  position: absolute;
+  top: 112px;
+  right: 55px;
+}
+
+/* RIGHT COLUMN */
+.right_col {
+  background-color: var(--white);
+  width: calc(1440px - 480px);
+  min-height: inherit;
+  display: flex;
+  align-items: center;
+}
+.right_col form {
+  background-color: rgb(46, 157, 144);
+  width: 500px;
+  margin-left: 17rem;
+  padding: 1rem;
+}
+.form_group {
+  display: flex;
+  flex-direction: column;
+  align-items: baseline;
+  font-size: 16px;
+  margin: 1rem 0;
+}
+label {
+  color: var(--very-dark-gray-violet);
+  letter-spacing: 1px;
+  font-weight: bolder;
+  text-transform: uppercase;
+  margin-bottom: 0.5rem;
+}
+input {
+  border: 1px solid var(--light-gray-violet);
+  border-radius: 10px;
+  width: 100%;
+  padding: 0.7rem 1rem;
+  font-size: 18px;
+}
+.err_msg {
+  color: var(--red);
+  font-size: 13px;
+}

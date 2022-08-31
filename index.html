@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- displays site properly based on user's device -->
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png" />
+    <script src="https://cdn.jsdelivr.net/npm/vue@2.7.10/dist/vue.js"></script>
+    <script src="./app.js" defer></script>
+    <link rel="stylesheet" href="style.css" />
+    <title>Frontend Mentor | Interactive card details form</title>
+  </head>
+  <body>
+    <main id="app">
+      <!-- Left column -->
+      <section class="left_col">
+        <div class="card_front">
+          <div class="card_balls">
+            <img src="./images/card-logo.svg" alt="#" />
+          </div>
+
+          <div class="card_infos">
+            <div class="card_code">{{ card.code }}</div>
+            <div class="card_owner_infos">
+              <div class="card_name">{{ card.name }}</div>
+              <div class="card_date">{{ card.date }}</div>
+            </div>
+          </div>
+        </div>
+        <div class="card_back">
+          <p class="cvv">{{ card.cvv }}</p>
+        </div>
+      </section>
+      <!-- Right column -->
+      <section class="right_col">
+        <!-- Form -->
+        <form>
+          <div class="form_group">
+            <label for="username">Cardholder Name</label>
+            <input type="text" name="username" placeholder="e.g. Jane Appleseed" required />
+            <p class="err_msg" v-show="errMsg">error message</p>
+          </div>
+
+          <div class="form_group">
+            <label for="number">Card Number</label>
+            <input
+              type="text"
+              name="number"
+              placeholder="e.g. 1234 5678 9123 0000"
+              required
+              minlength="16"
+              maxlength="16"
+            />
+            <p class="err_msg" v-show="errMsg">error message</p>
+          </div>
+          <div class="form_group">
+            <label for="date">Exp. Date (MM/YY)</label>
+            <input type="text" name="month" placeholder="MM" required minlength="2" maxlength="2" class="input_date"/>
+            <input type="text" name="year" placeholder="YY" required minlength="2" maxlength="2" class="input_date"/>
+            <p class="err_msg" v-show="errMsg">error message</p>
+          </div>
+          <div class="form_group">
+            <label for="cvv">CVC</label>
+            <input
+              type="text"
+              name="cvv"
+              placeholder="e.g. 123"
+              required
+              minlength="3"
+              maxlength="4"
+              class="input_cvv"
+            />
+            <p class="err_msg" v-show="errMsg">error message</p>
+          </div>
+          <div class="form_group">
+            <button type="submit">Confirm</button>
+          </div>
+        </form>
+      </section>
+    </main>
+  </body>
+</html>
